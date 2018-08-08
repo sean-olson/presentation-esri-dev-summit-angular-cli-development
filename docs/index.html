@@ -1,0 +1,443 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>Kick Starter: Rapid Application Development using Angular CLI, DS2018</title>
+
+	<link rel="stylesheet" href="css/reveal.css">
+	<link rel="stylesheet" href="css/theme/esri-dev-summit-2018.css">
+
+	<!-- Theme used for syntax highlighting of code -->
+	<link rel="stylesheet" href="lib/css/zenburn.css">
+
+	<!-- Printing and PDF exports -->
+	<script>
+		var link = document.createElement('link');
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+		document.getElementsByTagName('head')[0].appendChild(link);
+	</script>
+
+	<style>
+		.intro-css img {
+			border: none !important;
+			background: none !important;
+			box-shadow: none !important;
+		}
+
+		.blockquote-smaller blockquote {
+			font-size: 0.7em;
+		}
+
+	</style>
+
+</head>
+
+<body>
+	<div class="reveal">
+		<!-- NOTE: This is a fork from the Esri-approved PPT file here:
+			https://compass.esri.com/org/marketing/DevSummit/Pages/Workshop.aspx
+			We have moved the background images and have formatted the title slide,
+			But other things like alignment of text on subsequent slides may not be
+			in line with the PPT - use this template at your own risk!
+			-->
+
+		<div class="slides">
+			<section data-background="img/bg-1.png" data-background-size="cover" style="padding-left: 80px;">
+				<h3>
+					Kick Starter:
+				</h3>
+				<h3>
+					Rapid Application Development using Angular CLI
+				</h3>
+				<p style="text-align: center; margin-top: 75px;">
+					<span style="text-transform: uppercase; ;">Sean Olson</span>
+					<a href="https://www.linkedin.com/in/seanolson-io/" target="_blank" style="font-size: 30px;">
+						<img src="img/In-White-121px-R.png" width="40" style="border: none; vertical-align: middle; margin-left: 50px; margin-right: 10px;">seanolson-io
+					</a>
+				</p>
+				<p>Get the code samples, slides and resources from this presentation:</p>
+                <p><a href="https://github.com/sean-olson-e/Rapid-Application-Development-using-Angular-CLI" target="_gitTab">http://bit.ly/2FB7oP8</a></p>
+			</section>
+			<section data-markdown data-background="img/bg-2.png">
+				<textarea data-template>
+					### Primary audience for this presentation
+			
+					###### You have solid JavaScript development skills, but...
+
+					-	have no JavaScript framework experience.
+					-	have experience with JavaScript frameworks other than Angular.
+					-	work with Angular.js (Angular 1), but have not made the leap to Angular (Angular 2+).
+					- 	are just interested in tech and want to learn more.
+
+				</textarea>
+			</section>
+			<section data-background="img/bg-2.png">
+
+					<h2>What do we want to accomplish here?</h2>
+
+				<ol>
+					<li> Demonstrate essential techniques and design patterns for app development using Angular CLI</li>
+					<li> Introduce you to this self-teaching resource: <a href="https://github.com/sean-olson-e/Rapid-Application-Development-using-Angular-CLI" target="_gitTab">http://bit.ly/2FB7oP8</a>.  It provides code samples, step-by-step
+						instructions, and other resources to build this cool little app: <a href="http://localhost:4208" target="_appTab">4208</a>.</li>
+				</ol>
+
+			</section>
+			<section data-markdown data-background="img/bg-6.png">
+				<textarea data-template>
+
+					### About Angular, briefly
+					![Angular](img/angular.png)
+
+					Angular is a TypeScript-based open-source front-end web application platform led by the Angular Team at Google and by a community of individuals and corporations. Angular is a complete rewrite from the same team that built AngularJS.
+
+					#### Resources
+					- [Angular Documentation](https://angular.io/docs)
+					- [Angular CLI Documentation](https://github.com/angular/angular-cli/wiki)
+				</textarea>
+			</section>
+			<section data-markdown data-background="img/bg-6.png">
+				<textarea data-template>
+					### About TypeScript, briefly
+					![TypeScript](img/typescript.png)
+
+					TypeScript is a language for application-scale JavaScript. TypeScript adds optional types, classes, and modules to JavaScript. TypeScript supports tools for large-scale JavaScript applications for any browser, for any host, on any OS. TypeScript compiles to readable, standards-based JavaScript.
+
+					### Resources
+					- [Basic Types](https://www.typescriptlang.org/docs/handbook/basic-types.html)
+					- [TypeScript Wiki](https://github.com/Microsoft/TypeScript/wiki)
+					- [TypeScript Playground](https://www.typescriptlang.org/play/)
+				</textarea>
+			</section>
+            <section  data-background="img/bg-5.png" data-state="blockquote-smaller">
+
+					<h2> Working with the ArcGIS API for JavaScript</h2>
+
+				<img src="img/esri-logo.png" height="286" width="640"/>
+				<h3>The <a href="https://github.com/Esri/esri-loader" target="_gitTab">esri-loader</a>, briefly</h3>
+
+						<p>A tiny library to help load ArcGIS API for JavaScript modules in non-Dojo applications</p>
+                        <p class="">https://github.com/Esri/esri-loader</p>
+            </section>
+			<section data-background="img/bg-3.png">
+
+					<h2>About the Angular CLI, briefly</h2>
+					<ul style="width: 75%; margin: 40px auto;">
+						<li>It makes it easy to create an application that already works, right out of the box.</li>
+					<li>It generates components, routes, services and pipes with a simple command.</li>
+					<li>It eliminates the time consuming task of creating a custom build script.</li>
+					<li>It provides a standard application architecture that supports team development.</li>
+					<li>It facilitates rapid development with generator commands for components, services, directives and more.</li>
+					</ul>
+
+			</section>
+			<section data-background="img/bg-3.png">
+
+					<h2> Installing the Angular CLI</h2>
+                    <ul>
+                        <li>requires Node.js and npm </li>
+                        <li>install Angular CLI through npm </li>
+                    </ul>
+
+				<p class="lang-bash hljs" style="width: 80%; margin: 0 auto; text-align: left; padding: 40px;">
+						$ npm install -g @angular/cli
+                </p>
+			</section>
+			<section data-background="img/bg-2.png" data-state="into-css">
+
+                <h2>A few basic CLI commands</h2>
+
+                    <p class="lang-bash hljs" style="width: 80%; margin: 0 auto; text-align: left; padding: 40px;">
+					    $ ng new &lt; application-name &gt;  [options]<br><br>
+					    $ ng generate &lt; type &gt; [options]<br><br>
+					    $ ng serve [options]<br><br>
+					    $ ng build  [options]<br><br>
+                    </p>
+					<p>for more complete list of CLI commands checkout the <a href="https://github.com/angular/angular-cli/wiki">Angular CLI Wiki</a></p>
+			</section>
+			<section data-background="img/bg-2.png" data-state="into-css">
+					<h2> Generating a new app</h2>
+
+                    <p class="lang-bash hljs" style="width: 80%; margin: 0 auto; text-align: left; padding: 40px;">
+					    # from your terminal, run<br><br>
+						$ ng new &lt; application-name &gt;  [options]
+					</p>
+					<p>It's that easy.</p>
+			</section>
+			<section data-background="img/bg-3.png">
+					<h2>Serving an Angular app</h2>
+
+                <p class="lang-bash hljs" style="width: 80%; margin: 0 auto; text-align: left; padding: 40px;">
+						# navigate to the root directory of your app, and run<br><br>
+						$ ng serve[options]<br><br><br>
+                        # Open a browser and navigate to localhost:4200
+					</p>
+			</section>
+			<section data-markdown data-background="img/bg-3.png">
+				<textarea data-template>
+					![bootstrap sequence](img/bootstrap_sequence.png)
+				</textarea>
+			</section>
+            <section  data-background="img/bg-3.png">
+                <h2>Exploring the application structure</h2>
+
+                <p>Too much to show in a slide.</p>
+
+                <p>Let's checkout the project app <a href="https://github.com/sean-olson-e/Rapid-Application-Development-using-Angular-CLI/tree/master/project_apps/0-app-scaffolding" target="_gitTab">0-app-scaffolding</a>.</p>
+            </section>
+			<section data-background="img/bg-9.png" data-state="into-css">
+
+                <p>So, let's get started with our app.</p>
+
+					<h2>Step one: create a component</h2>
+
+                <p style="font-size:.8em"><a href="http://localhost:4201" target="_appTab">Local Instance Running on port 4201</a></p>
+
+			</section>
+			<section data-markdown data-background="img/bg-5.png" data-state="blockquote-smaller">
+				<textarea data-template>
+					![step one](img/step_one_component.png)
+				</textarea>
+			</section>
+			<section data-background="img/bg-6.png">
+					<h2>Create a component using Angular CLI</h2>
+
+					<p class="lang-bash hljs" style="width: 80%; margin: 0 auto; text-align: left; padding: 40px;">
+						# Syntax: ng &nbsp; generate &nbsp; &lt;item&gt; &nbsp; &lt;name&gt; &nbsp; [options]<br><br>
+						$ ng &nbsp; generate &nbsp; component &nbsp; key-manager<br><br><br>
+						# Abbreviated syntax:&nbsp; ng &nbsp; g &nbsp; c &nbsp;  &lt;name&gt; [options]<br><br>
+						$ ng &nbsp; g &nbsp; c &nbsp; key-manager<br><br><br>
+					</p>
+
+				<p>See it <a href="http://localhost:4201" target="_appTab">work</a></p>
+
+			</section>
+			<section data-background="img/bg-8.png">
+				<h2>Two-way property binding:</h2>
+				<p>Let's walk <a href="https://github.com/sean-olson-e/Rapid-Application-Development-using-Angular-CLI/tree/master/project_apps/2-importing-styles-using-built-in-directives/src/app" target="_gitTab">the code</a> that demonstrates the two-way property-binding pattern.</p>
+			</section>
+
+
+			<section data-background="img/bg-9.png" >
+
+					<h2>Building with a little style</h2>
+
+				<p style="margin: 40px 0;">Here is our task list for step two:</p>
+					<ul>
+						<li>Create a header component</li>
+						<li>Create a component that will maintain a list of our favorite foods</li>
+						<li>Leverage built-in Angular directives</li>
+						<li>Add some global styles</li>.
+					</ul>
+					<p>Here's what we're going to build <a href="http://localhost:4203" target="_appTab">4203</a></p>
+
+			</section>
+			<section data-markdown data-background="img/bg-5.png">
+				<textarea data-template>
+					![step two](img/step_two_components.png)
+				</textarea>
+			</section>
+			<section data-background="img/bg-5.png">
+				<h2>Working from the terminal:</h2>
+				<p class="lang-bash hljs" style="width: 80%; margin: 0 auto; text-align: left; padding: 40px;">
+					$ ng &nbsp; generate &nbsp; component &nbsp; header <br><br>
+					$ ng &nbsp; g &nbsp; c &nbsp; cuisine-type-list <br><br>
+					$ npm &nbsp; install &nbsp; bootstrap &nbsp; --save <br><br>
+					$ npm &nbsp; install &nbsp; font-awesome &nbsp; --save <br><br>
+				</p>
+				<p>Let's checkout <a href="https://github.com/sean-olson-e/Rapid-Application-Development-using-Angular-CLI/tree/master/project_apps/3-sharing-properties-using-custom-events/src/app" target="_gitTab">the code</a>.</p>
+			</section>
+			<section data-background="img/bg-7.png">
+				<h2>Make the UI more dynamic.</h2>
+				<p>Here's the behavior we we're looking for: <a href="http://localhost:4204" target="_appTab">4204</a>
+			</section>
+			<section data-markdown data-background="img/bg-5.png" data-state="blockquote-smaller">
+				<textarea data-template>
+					![step three](img/step_three_components.png)
+				</textarea>
+			</section>
+			<section data-background="img/bg-8.png">
+				<h2>Review the completed <a href="https://github.com/sean-olson-e/Rapid-Application-Development-using-Angular-CLI/tree/master/project_apps/4-creating-services/src/app" target="_gitTab"> code</a>.</h2>
+			</section>
+			<section data-background="img/bg-9.png">
+				<h2>Save the data!</h2>
+				<p>We have <a href="http://localhost:4204" target="_appTab">a problem</a> with our cuisine-type list that we need to resolve.</p>
+			</section>
+			<section data-markdown data-background="img/bg-6.png" data-state="blockquote-smaller">
+				<textarea data-template>
+					![step four](img/step_four_components.png)
+				</textarea>
+			</section>
+			<section data-background="img/bg-5.png">
+				<h2>Working from the terminal:</h2>
+				<p class="lang-bash hljs" style="width: 80%; margin: 0 auto; text-align: left; padding: 40px;">
+					$ ng &nbsp; generate &nbsp; service &nbsp; cuisine-type &nbsp; --flat true <br><br>
+				</p>
+				<p>Review the <a href="https://github.com/sean-olson-e/Rapid-Application-Development-using-Angular-CLI/tree/master/project_apps/5-configuring-routes/src/app" target="_gitTab">the code</a>.</p>
+			</section>
+			<section data-background="img/bg-9.png">
+				<h2>Use routing to manage multiple views</h2>
+				<p style="margin: 40px auto; text-align: left; width: 70%;">
+					We need to create console that will support both search and map visualizations, but first will add routing,
+					another service and a few more components.  Here is what we're trying to accomplish <a href="http://localhost:4206" target="_appTab">4206</a>.
+				</p>
+			</section>
+			<section data-markdown data-background="img/bg-6.png" data-state="blockquote-smaller">
+				<textarea data-template>
+					![step five](img/step_five_components.png)
+				</textarea>
+			</section>
+			<section data-background="img/bg-5.png">
+				<h2>Working from the terminal:</h2>
+				<p class="lang-bash hljs" style="width: 80%; margin: 0 auto; text-align: left; padding: 40px;">
+					$ ng &nbsp; g &nbsp; c &nbsp; console <br><br>
+					$ ng &nbsp; g &nbsp; c &nbsp; search-panel <br><br>
+					$ ng &nbsp; g &nbsp; c &nbsp; map-panel <br><br>
+					$ ng &nbsp; g &nbsp; s &nbsp; yelp &nbsp; --flat true <br><br>
+				</p>
+				<p>Let's see <a href="https://github.com/sean-olson-e/Rapid-Application-Development-using-Angular-CLI/tree/master/project_apps/6-using-http-connections/src/app" target="_gitTab">the code</a>.</p>
+			</section>
+			<section data-background="img/bg-9.png">
+				<h2>Time to add search functionality</h2>
+				<p style="margin: 40px auto; text-align: left; width: 70%;">We need components for our search and to build out the Yelp service to manage our API requests.</p>
+				<p>This is the functionality we want to create: <a href="http://localhost:4207" target="_appTab">4207</a>.</p>
+			</section>
+			<section data-background="img/bg-9.png">
+				<h2>Using the Yelp Proxy</h2>
+				<p style="margin: 40px auto; text-align: left; width: 70%;">At the time this app was developed the Yelp Fusion API did not support CORS, preventing calls from client-side
+					apps. To enable API access, a simple Yelp proxy is included in this repository.
+				</p>
+				<ol>
+					<li>Navigate into the <em>yelp_proxy</em> directory at the root of this repository.</li>
+					<li>From a terminal, run <span style="font-family: monospace">npm install</span></li>
+					<li>From a terminal, run <span style="font-family: monospace">npm start</span></li>
+					<li>Test by opening a browser to <a href="http://localhost:3000" target="_appTab">localhost:3000</a></li>
+				</ol>
+			</section>
+			<section data-markdown data-background="img/bg-6.png" data-state="blockquote-smaller">
+				<textarea data-template>
+					![step six](img/step_six_components.png)
+				</textarea>
+			</section>
+			<section data-background="img/bg-5.png">
+				<h2>Working from the terminal:</h2>
+				<p class="lang-bash hljs" style="width: 80%; margin: 0 auto; text-align: left; padding: 40px;">
+					$ ng &nbsp; g &nbsp; c &nbsp; search-control <br><br>
+					$ ng &nbsp; g &nbsp; c &nbsp; search-results <br><br>
+				</p>
+			</section>
+			<section data-background="img/bg-7.png">
+				<h2>Leveraging RxJS Observables</h2>
+				<p style="margin: 40px auto; text-align: left; width: 70%;">
+					Establishing communication between services and components is trivial matter with RxJS Observables
+				</p>
+				Let's see how we manage <a href="https://github.com/sean-olson-e/Rapid-Application-Development-using-Angular-CLI/tree/master/project_apps/7-incorporating-ArcGIS-API/src/app" target="_gitTab"> code </a>state.
+			</section>
+			<section data-background="img/bg-9.png">
+					<h2>Bring in the Map</h2>
+					<p style="margin: 40px auto; text-align: left; width: 70%;">Alright, we have a functioning app.  Now let's add a useful visualization, so we can figure out
+						how to get to the restaurant.  To bring the ArcGIS API for JavaScript into Angular, we need the <a href="https://github.com/Esri/esri-loader" target="_gitTab">esri-loader</a>.
+					</p>
+			</section>
+			<section data-background="img/bg-5.png">
+				<h2>Working from the terminal:</h2>
+				<p class="lang-bash hljs" style="width: 80%; margin: 0 auto; text-align: left; padding: 40px;">
+					$ npm &nbsp; install &nbsp; --save esri-loader <br><br>
+					$ npm &nbsp; install &nbsp; --save &nbsp; @types/arcgis-js-api <br><br>
+					# after &nbsp; installation<br>
+					# add &nbsp; "types": &nbsp; ["arcgis-js-api"] &nbsp; to &nbsp; tsconfig.app.json<br>
+					# add &nbsp; "types": &nbsp; ["arcgis-js-api"] &nbsp; to &nbsp; tsconfig.spec.json
+				</p>
+			</section>
+			<section data-background="img/bg-6.png">
+				<h2>Import the esri-loader into a component</h2>.
+				<p class="lang-bash hljs" style="width: 80%; margin: 0 auto; text-align: left; padding: 40px;">
+					import { loadModules } from 'esri-loader'; <br>
+					&nbsp;&nbsp;&nbsp;&nbsp;...<br>
+					loadModules([<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;'esri/Map', 'esri/views/MapView', 'esri/Graphic'<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;])<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;.then(([EsriMap, EsriMapView, Graphic]) => {<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;// Work with your map<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;...<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;});<br>
+				</p>
+			</section>
+			<section  data-background="img/bg-8.png">
+
+				<h2>Let's look at <a href="https://github.com/sean-olson-e/Rapid-Application-Development-using-Angular-CLI/tree/master/project_apps/8-finished-app/src/app" target="_gitTab">a sample</a> implementation</h2>
+
+			</section>
+			<section data-markdown data-background="img/bg-9.png" data-state="into-css">
+				<textarea data-template>
+					## That's it!
+				</textarea>
+			</section>
+
+			<section data-markdown data-background="img/bg-6.png">
+				<textarea data-template>
+					## Where to get help: Angular
+
+					- Angular docs at https://angular.io/
+					
+					- Stack Overflow
+					
+					- Your own favorite places for web dev help
+				</textarea>
+			</section>
+			<section data-markdown data-background="img/bg-5.png">
+				<textarea data-template>
+					## Where to get help: Esri JSAPI
+
+					- https://js.arcgis.com
+
+					- [GeoNet: ArcGIS API for JavaScript Community](https://community.esri.com/community/developers/web-developers/arcgis-api-for-javascript)
+
+					- [GIS Stack Exchange](https://gis.stackexchange.com/)
+				</textarea>
+			</section>
+			<section data-background="img/bg-final.png" data-background-size="cover" style="padding-left: 28%;">
+				<h1 style="text-align: left; font-size: 80px;">
+					Thank you
+				</h1>
+
+				<p style="text-align: left; display: flex; align-items: center;">
+					<span style="text-transform: uppercase;">Sean Olson</span>
+					<a href="https://www.linkedin.com/in/seanolson-io/" target="_blank">
+						<img src="img/In-White-121px-R.png" width="50" style="border: none; vertical-align: middle; margin-left: 50px; margin-right: 10px;">seanolson-io
+					</a>
+				</p>
+			</section>
+		</div>
+	</div>
+
+	<script src="lib/js/head.min.js"></script>
+	<script src="js/reveal.js"></script>
+
+	<script>
+		// More info about config & dependencies:
+		// - https://github.com/hakimel/reveal.js#configuration
+		// - https://github.com/hakimel/reveal.js#dependencies
+		Reveal.initialize({
+			// This height and width are here for the left-aligned title slide. 
+			// If you do not want that, you can remove these two settings and
+			// the presentation will be closer to OOTB-Reveal.js:
+			width: '100%',
+			height: '100%',
+
+			history: true,
+			dependencies: [
+				{ src: 'plugin/markdown/marked.js' },
+				{ src: 'plugin/markdown/markdown.js' },
+				{ src: 'plugin/notes/notes.js', async: true },
+				{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+			]
+		});
+	</script>
+</body>
+
+</html>

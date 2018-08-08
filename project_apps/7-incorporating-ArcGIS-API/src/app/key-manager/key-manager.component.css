@@ -1,0 +1,14 @@
+.nav-button {
+  width: 150px;
+}
+.btn-reset{
+  background-color: rgb(245, 209, 120);
+}
+.btn-reset:hover{
+  background-color: rgb(228, 185, 86);
+}
+.nav-panel {
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
